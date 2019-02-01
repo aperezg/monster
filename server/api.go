@@ -78,7 +78,7 @@ func (a *api) fetchMonsters(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.WriteHeader(http.StatusAccepted)
+	w.WriteHeader(http.StatusOK)
 	if err := jsonapi.MarshalPayload(w, m); err != nil {
 		a.marshalError(w, err, http.StatusInternalServerError)
 		return
@@ -93,7 +93,7 @@ func (a *api) fetchMonster(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.WriteHeader(http.StatusAccepted)
+	w.WriteHeader(http.StatusOK)
 	if err := jsonapi.MarshalPayload(w, m); err != nil {
 		a.marshalError(w, err, http.StatusInternalServerError)
 		return
